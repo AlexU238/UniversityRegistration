@@ -14,23 +14,28 @@ public abstract class Student {
 
     @Column(name = "name")
     protected String name;
-//    protected String surname;
+    @Column(name = "surname")
+    protected String surname;
+//    @Column()
 //    protected String dateOfBirth;
-//    protected String citizenship;
-//    protected String faculty;
-//    protected String program;
-//    protected String sex;
-//    protected String email;
-//    protected String graduatedSchool;
+    @Column(name = "citizenship")
+    protected String citizenship;
+    @Column(name = "faculty")
+    protected String faculty;
+    @Column(name = "program")
+    protected String program;
+    @Column(name = "sex")
+    protected String sex;
+    @Column(name = "email")
+    protected String email;
+    @Column(name = "graduated_school")
+    protected String graduatedSchool;
     @Column(name = "registration_year")
     protected int yearOfRegistration;
 
-//    public Student() {
-//    }
-
     public Student() {
-        
     }
+
 
     public String getName() {
         return name;
@@ -39,7 +44,7 @@ public abstract class Student {
     public void setName(String name) {
         this.name = name;
     }
-
+//
     public int getId() {
         return id;
     }
@@ -48,14 +53,14 @@ public abstract class Student {
         this.id = id;
     }
 
-    //    public String getSurname() {
-//        return surname;
-//    }
-//
-//    public void setSurname(String surname) {
-//        this.surname = surname;
-//    }
-//
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
 //    public String getDateOfBirth() {
 //        return dateOfBirth;
 //    }
@@ -64,53 +69,53 @@ public abstract class Student {
 //        this.dateOfBirth = dateOfBirth;
 //    }
 //
-//    public String getCitizenship() {
-//        return citizenship;
-//    }
-//
-//    public void setCitizenship(String citizenship) {
-//        this.citizenship = citizenship;
-//    }
-//
-//    public String getFaculty() {
-//        return faculty;
-//    }
-//
-//    public void setFaculty(String faculty) {
-//        this.faculty = faculty;
-//    }
-//
-//    public String getProgram() {
-//        return program;
-//    }
-//
-//    public void setProgram(String program) {
-//        this.program = program;
-//    }
-//
-//    public String getSex() {
-//        return sex;
-//    }
-//
-//    public void setSex(String sex) {
-//        this.sex = sex;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-//
-//    public String getGraduatedSchool() {
-//        return graduatedSchool;
-//    }
-//
-//    public void setGraduatedSchool(String graduatedSchool) {
-//        this.graduatedSchool = graduatedSchool;
-//    }
+    public String getCitizenship() {
+        return citizenship;
+    }
+
+    public void setCitizenship(String citizenship) {
+        this.citizenship = citizenship;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
+    public String getProgram() {
+        return program;
+    }
+
+    public void setProgram(String program) {
+        this.program = program;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getGraduatedSchool() {
+        return graduatedSchool;
+    }
+
+    public void setGraduatedSchool(String graduatedSchool) {
+        this.graduatedSchool = graduatedSchool;
+    }
 
 
     public int getYearOfRegistration() {

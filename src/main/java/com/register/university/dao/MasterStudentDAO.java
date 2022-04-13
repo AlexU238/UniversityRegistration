@@ -1,5 +1,6 @@
 package com.register.university.dao;
 
+import com.register.university.model.BachelorStudent;
 import com.register.university.model.MasterStudent;
 import com.register.university.model.Student;
 import org.hibernate.Session;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Component
 public class MasterStudentDAO implements MasterDAO {
@@ -35,4 +37,15 @@ public class MasterStudentDAO implements MasterDAO {
     public void approve() {
 
     }
+
+    @Override
+    public List<MasterStudent> getAll() {
+        Session session = entityManager.unwrap(Session.class);
+
+        Query<MasterStudent> query = session.createQuery("from MasterStudent order by id", MasterStudent.class);
+
+        return query.getResultList();
+    }
+
+
 }

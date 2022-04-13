@@ -6,18 +6,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "masters")
-public class MasterStudent extends Student{
+public class MasterStudent extends Student {
 
     @Column(name = "master_number")
     private String masterNumber;
 
-
-    public MasterStudent(String masterNumber) {
-        this.masterNumber = masterNumber;
-    }
+    @Column(name = "bachelor")
+    private String bachelor;
 
     public MasterStudent() {
-
     }
 
     public String getMasterNumber() {
@@ -28,5 +25,11 @@ public class MasterStudent extends Student{
         this.masterNumber = masterNumber;
     }
 
+    public String getBachelor() {
+        return bachelor;
+    }
 
+    public void setBachelor(String bachelor) {
+        this.bachelor = bachelor;
+    }
 }

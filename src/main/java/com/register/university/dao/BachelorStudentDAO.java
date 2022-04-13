@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Component
 public class BachelorStudentDAO  implements BachelorDAO{
@@ -31,6 +32,16 @@ public class BachelorStudentDAO  implements BachelorDAO{
 
     @Override
     public void approve() {
+
+    }
+
+    @Override
+    public List<BachelorStudent> getAll() {
+        Session session = entityManager.unwrap(Session.class);
+
+        Query<BachelorStudent> query = session.createQuery("from BachelorStudent order by id", BachelorStudent.class);
+
+        return query.getResultList();
 
     }
 }

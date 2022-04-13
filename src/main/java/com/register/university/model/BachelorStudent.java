@@ -16,13 +16,20 @@ public class BachelorStudent extends Student{
     @Column(name = "bachelor_number")
     private String bachelorNumber;
 
-    public BachelorStudent(String bachelorNumber) {
-        this.bachelorNumber = bachelorNumber;
-    }
-
     public BachelorStudent() {
-
     }
+
+//    public BachelorStudent(String name,
+//                           String surname,
+//                           String dateOfBirth,
+//                           String citizenship,
+//                           String faculty,
+//                           String program,
+//                           String sex,
+//                           String email,
+//                           String graduatedSchool) {
+//        super(name, surname, dateOfBirth, citizenship, faculty, program, sex, email, graduatedSchool);
+//    }
 
     public String getBachelorNumber() {
         return bachelorNumber;

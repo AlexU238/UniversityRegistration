@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Master student registration</title>
+</head>
+
+<body>
+
+<p>
+
+    <input type="text" id="name" placeholder="Your name">
+    <input type="text" id="surname" placeholder="Your surname">
+    <input type="text" id="citizenship" placeholder="Citizenship">
+    <input type="text" id="faculty" placeholder="Faculty create a dropdown">
+    <input type="text" id="program" placeholder="Program create a dropdown">
+    <input type="text" id="sex" placeholder="Your sex">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="graduatedSchool" placeholder="Graduated school">
+    <input type="text" id="bachelor" placeholder="Graduated bachelor">
+
+
+    <!-- Button to send data -->
+    <button onclick="registerMaster()">Send JSON</button>
+
+</p>
+
+<script>
+
+    function registerMaster(){
+
+        let name = document.querySelector('#name');
+        let surname = document.querySelector('#surname');
+        let citizenship = document.querySelector('#citizenship');
+        let faculty = document.querySelector('#faculty');
+        let program = document.querySelector('#program');
+        let sex = document.querySelector('#sex');
+        let email = document.querySelector('#email');
+        let graduatedSchool = document.querySelector('#graduatedSchool');
+        let bachelor = document.querySelector('#bachelor');
+
+        let xhr = new XMLHttpRequest();
+        let url = "/register/master";
+
+        xhr.open("POST", url, true);
+
+        // Set the request header i.e. which type of content you are sending
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+
+        // Sending data with the request
+        xhr.send(JSON.stringify({ "name": name.value,
+            "surname": surname.value,
+            "citizenship": citizenship.value,
+            "faculty": faculty.value,
+            "program": program.value,
+            "sex": sex.value,
+            "email": email.value,
+            "graduatedSchool": graduatedSchool.value,
+            "bachelor":bachelor.value}));
+
+    }
+
+</script>
+
+</body>
+</html>

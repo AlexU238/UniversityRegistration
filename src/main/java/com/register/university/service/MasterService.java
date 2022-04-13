@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MasterService implements MasterControlService {
 
@@ -29,5 +31,10 @@ public class MasterService implements MasterControlService {
     @Override
     public void approve() {
 
+    }
+
+    @Override
+    public List getAll() {
+        return masterDAO.getAll();
     }
 }
