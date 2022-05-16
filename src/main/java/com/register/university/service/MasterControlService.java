@@ -9,9 +9,9 @@ public interface MasterControlService {
 
     MasterStudent getById(int id);
 
-    void deleteById(int id);
+    void delete();
 
-    void approve();
+    void approve(int id);
 
     List getAll();
 }

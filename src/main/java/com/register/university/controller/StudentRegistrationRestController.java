@@ -3,7 +3,7 @@ package com.register.university.controller;
 
 import com.register.university.model.BachelorStudent;
 import com.register.university.model.MasterStudent;
-import com.register.university.service.StudentControlService;
+import com.register.university.service.StudentRegistrationsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/register")
 public class StudentRegistrationRestController {
 
-    private StudentControlService studentControlService;
+    private StudentRegistrationsService studentControlService;
 
     @Autowired
-    public StudentRegistrationRestController(@Qualifier("studentService") StudentControlService studentControlService) {
+    public StudentRegistrationRestController(@Qualifier("studentService") StudentRegistrationsService studentControlService) {
         this.studentControlService = studentControlService;
     }
 

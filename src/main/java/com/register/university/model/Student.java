@@ -3,6 +3,7 @@ package com.register.university.model;
 import com.register.university.util.CurrentYear;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @MappedSuperclass
 public abstract class Student {
@@ -10,14 +11,14 @@ public abstract class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    int id;
+    protected int id;
 
     @Column(name = "name")
     protected String name;
     @Column(name = "surname")
     protected String surname;
-//    @Column()
-//    protected String dateOfBirth;
+    @Column(name = "date_of_birth")
+    protected Date dateOfBirth;
     @Column(name = "citizenship")
     protected String citizenship;
     @Column(name = "faculty")
@@ -44,7 +45,7 @@ public abstract class Student {
     public void setName(String name) {
         this.name = name;
     }
-//
+
     public int getId() {
         return id;
     }
@@ -61,14 +62,14 @@ public abstract class Student {
         this.surname = surname;
     }
 
-//    public String getDateOfBirth() {
-//        return dateOfBirth;
-//    }
-//
-//    public void setDateOfBirth(String dateOfBirth) {
-//        this.dateOfBirth = dateOfBirth;
-//    }
-//
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public String getCitizenship() {
         return citizenship;
     }
@@ -124,5 +125,21 @@ public abstract class Student {
 
     public void setYearOfRegistration(int yearOfRegistration) {
         this.yearOfRegistration = yearOfRegistration;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", citizenship='" + citizenship + '\'' +
+                ", faculty='" + faculty + '\'' +
+                ", program='" + program + '\'' +
+                ", sex='" + sex + '\'' +
+                ", email='" + email + '\'' +
+                ", graduatedSchool='" + graduatedSchool + '\'' +
+                ", yearOfRegistration=" + yearOfRegistration +
+                '}';
     }
 }

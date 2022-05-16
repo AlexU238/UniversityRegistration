@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
-public class StudentService implements StudentControlService {
+public class StudentService implements StudentRegistrationsService {
 
     private StudentDAO studentDAO;
 

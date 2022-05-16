@@ -1,5 +1,6 @@
 package com.register.university.model;
 
+import com.register.university.util.StudentNumberGenerator;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -8,10 +9,6 @@ import javax.persistence.*;
 @Table(name = "bachelors")
 public class BachelorStudent extends Student{
 
-//    @GenericGenerator(name="seq_id", strategy="com.register.university.util.BachelorIDGenerator")
-//    @GeneratedValue(generator="seq_id")
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 
     @Column(name = "bachelor_number")
     private String bachelorNumber;
@@ -19,17 +16,12 @@ public class BachelorStudent extends Student{
     public BachelorStudent() {
     }
 
-//    public BachelorStudent(String name,
-//                           String surname,
-//                           String dateOfBirth,
-//                           String citizenship,
-//                           String faculty,
-//                           String program,
-//                           String sex,
-//                           String email,
-//                           String graduatedSchool) {
-//        super(name, surname, dateOfBirth, citizenship, faculty, program, sex, email, graduatedSchool);
-//    }
+
+    public void approve(){
+        if(bachelorNumber==null){
+            setBachelorNumber(StudentNumberGenerator.generateBachelorNumber());
+        }
+    }
 
     public String getBachelorNumber() {
         return bachelorNumber;
@@ -37,5 +29,13 @@ public class BachelorStudent extends Student{
 
     public void setBachelorNumber(String bachelorNumber) {
         this.bachelorNumber = bachelorNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "BachelorStudent{" +
+                "bachelorNumber='" + bachelorNumber + '\'' +
+                ", student="+super.toString() + '\'' +
+                '}';
     }
 }
